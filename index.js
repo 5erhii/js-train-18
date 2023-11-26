@@ -344,11 +344,9 @@ function evaluateExpression(expression) {
     return eval(expression);
     // Якщо була виявлена помилка повертаємо помилку при виконанні функції eval
   } catch (error) {
-    return `EvalError: ${error.message}.
-    ${error.stack}`;
+    return EvalError(error.message);
   }
 }
-
 console.log("Завдання: 10 ==============================");
 
 console.log(evaluateExpression("2 + 2")); // виведе 4
